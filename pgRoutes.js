@@ -24,7 +24,7 @@ router.post('/addpg', upload.single('image'), async (req, res) => {
         const newPg = new PG({
             ...req.body,
             ownerId: req.body.ownerId, // ✅ Ensure ownerId is saved
-            imageUrl: req.file ? `https://localhost:5000/uploads/${req.file.filename}` : ''
+            imageUrl: req.file ? `https://pgbackend-6998.onrender.com/uploads/${req.file.filename}` : ''
         });
 
         await newPg.save();
