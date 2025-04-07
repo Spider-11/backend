@@ -7,7 +7,15 @@ const path = require('path');
 const app = express();
 
 // Middleware
-app.use(cors());
+app.use(cors({
+  origin: "https://pgnow.onrender.com", // Allow only your frontend
+  methods: "GET,POST,PUT,DELETE",
+  credentials: true
+}));
+
+// ✅ Handle preflight requests
+app.options("*", cors());
+
 app.use(express.json());
 app.use('/uploads', express.static(path.join(__dirname, 'uploads'))); // Serve uploaded images
 
