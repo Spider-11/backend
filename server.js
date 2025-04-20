@@ -8,7 +8,7 @@ const app = express();
 
 // Middleware
 app.use(cors({
-  origin: "https://pgnow.onrender.com", // Allow only your frontend
+  origin: "https://pghome.netlify.app", // Allow only your frontend
   methods: "GET,POST,PUT,DELETE",
   credentials: true
 }));
